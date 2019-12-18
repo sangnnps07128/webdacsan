@@ -1,0 +1,31 @@
+@charset "utf-8";
+.footer__content a {
+    font-size: 16px!important;
+}
+.fekit-shop-detail-1 .box__relation .item figure .box img,
+.fekit-shop-2 .item figure .box img,
+.fekit-box-14 .item figure .box img{
+    height: 210px;
+    object-fit: cover;
+}
+.fekit-shop-detail-1 .box-img img {
+    height: 300px;
+    object-fit: cover;
+}
+.ha-giang .currency .price-hg:after{
+    content: '/1Kg';
+}
+#hg-27.ha-giang .currency .price-hg:after{
+    content: '/1Con';
+}
+
+/* Dac San Page */
+#hg-27.prd-2 .currency .price-prd-2:after {
+    content: '/1Con';
+}
+.prd-2 .currency .price-prd-2:after,
+.prd-8 .currency .price-prd-8:after,
+.prd-7 .currency .price-prd-7:after,
+.prd-6 .currency .price-prd-6:after{
+    content: '/1Kg';
+}

@@ -1,0 +1,54 @@
+<IfModule  mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#trang chủ
+
+#Đặc sản theo danh mục
+RewriteRule ^dac-san/([0-9]+)/([a-zA-Z0-9_-]+)\.html$ index.php?page=dac-san&id=$1
+
+#chi tiet dac san
+RewriteRule ^dac-san/chi-tiet/([0-9]+)/([a-zA-Z0-9_-]+)\.html$ index.php?page=dac-san-chi-tiet&id=$1
+
+#dac san admin
+RewriteRule ^dac-san/([0-9]+)\.html$ index.php?page=dac-san-chi-tiet&id=$1
+
+#login
+RewriteRule ^dang-nhap.html$ index.php?page=dang-nhap [L]
+
+#login request
+RewriteRule ^dang-nhap-check$ index.php?page=action_login [L]
+
+#reset pass
+RewriteRule ^quen-mat-khau.html$ index.php?page=reset [L]
+
+#logout
+RewriteRule ^dang-xuat.html$ index.php?page=logout [L]
+
+#register
+RewriteRule ^dang-ki.html$ index.php?page=dang-ki [L]
+
+#lien-he
+RewriteRule ^lien-he.php$ index.php?page=lien-he [L]
+
+#Gui lien he
+RewriteRule ^contact-check.php$ index.php?page=contact_submit [L]
+#gioi thieu
+RewriteRule ^gioi-thieu.html$ index.php?page=gioi-thieu [L]
+
+#trở về trang chủ
+RewriteRule ^trang-chu.html$ index.php  [L]
+
+#404 page
+RewriteRule ^404.html$ index.php?page=404  [L]
+#lỗi 404
+ErrorDocument 404 https://chodacsansach.vn/404.html
+
+</IfModule>
+# DO NOT REMOVE THIS LINE AND THE LINES BELOW SSL_REDIRECT:chodacsansach.vn
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^chodacsansach.vn$
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# DO NOT REMOVE THIS LINE AND THE LINES ABOVE SSL_REDIRECT:chodacsansach.vn
